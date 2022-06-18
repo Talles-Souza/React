@@ -18,7 +18,6 @@ export const Inicio = () => {
           <Paginacao />
         </Cont12>
       </Cont1>
-
     </Body>
   </>);
 }
