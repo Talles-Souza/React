@@ -12,13 +12,12 @@ export const InicioTres = () => {
     <Container />
     <Body>
       <Cont1>
-        <Cont11><h2><Texto>Testando a paginação e mais algumas coisas</Texto></h2></Cont11>
+        <Cont11><h2><Texto>Comece sua jornada na tecnologia</Texto></h2></Cont11>
         <Cont12>
           <Cartao3 />
-          <Paginacao />
+          <Paginacao/>
         </Cont12>
       </Cont1>
-
     </Body>
   </>);
 }
