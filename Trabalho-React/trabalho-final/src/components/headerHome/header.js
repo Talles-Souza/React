@@ -10,7 +10,7 @@ export const Topo = () => {
 
       <Container fluid>
 
-        <Navbar.Brand href="#"><button type="button" class="btn btn-light">Tech Books</button></Navbar.Brand>
+        <Navbar.Brand href="/"><button type="button" class="btn btn-light">Tech Books</button></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,8 +18,8 @@ export const Topo = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1"><button type="button" class="btn btn-light">Carrinho</button></Nav.Link>
-            <Nav.Link href="#action2"><button type="button" class="btn btn-light">Contato</button></Nav.Link>
+            <Nav.Link href="/carrinho"><button type="button" class="btn btn-light">Carrinho</button></Nav.Link>
+            <Nav.Link href="/contato"><button type="button" class="btn btn-light">Contato</button></Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <button type="button" class="btn btn-outline-danger">Sair</button>

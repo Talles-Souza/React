@@ -11,7 +11,7 @@ export const Cartao3 = ()=>{
   <Card.Body>
     <Card.Title>Business Intelligence e Data Science</Card.Title>
     <Card.Text>
-    O ambiente de negócios está em constante evolução e cada vez mais complexo. Exigindo o uso de sistemas computadorizados.
+    O ambiente de negócios está em constante evolução e cada vez mais complexo. 
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -22,7 +22,7 @@ export const Cartao3 = ()=>{
   <Card.Body>
     <Card.Title>O Programador Apaixonado</Card.Title>
     <Card.Text>
-    Você vai aprender habilidades para empreender com a sua carreira, e assim, ajudamos a levá-la para o caminho que você escolheu: o do sucesso.
+    Você vai aprender habilidades para empreender com a sua carreira.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -33,7 +33,7 @@ export const Cartao3 = ()=>{
   <Card.Body>
     <Card.Title>Data Viz e Analytics no Tableau: Tableau Your Data!</Card.Title>
     <Card.Text>
-    Esta nova edição é companheiro do Tableau, ajudando a tirar o máximo proveito deste conjunto de ferramentas de negócios.
+    Esta nova edição é companheiro do Tableau.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button> 
   </Card.Body>
@@ -44,7 +44,7 @@ export const Cartao3 = ()=>{
   <Card.Body>
     <Card.Title>Código limpo: Habilidades práticas do Agile Software</Card.Title>
     <Card.Text>
-    Mesmo um código ruim pode funcionar. Mas se ele não for limpo, pode acabar com uma empresa de desenvolvimento.
+    Mesmo um código ruim pode funcionar. 
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -55,7 +55,7 @@ export const Cartao3 = ()=>{
   <Card.Body>
     <Card.Title>PHP Programando com Orientação a Objetos - 4ª Edição</Card.Title>
     <Card.Text>
-    Uma das linguagem mais utilizadas no mundo por ser flexível e ter clases abrangentes.
+    Uma das linguagem mais utilizadas no mundo.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -64,9 +64,9 @@ export const Cartao3 = ()=>{
 <Card style={{ width: '18rem' , height : '47%' }}>
   <Card.Img style={{ width: '100%' , height : '47%' }} variant="top" src="https://images-na.ssl-images-amazon.com/images/I/41qeEtBu02L._SX357_BO1,204,203,200_.jpg" />
   <Card.Body>
-    <Card.Title>Introdução à Programação com Python: Algoritmos e Lógica de Programação Para Iniciantes </Card.Title>
+    <Card.Title>Introdução à Programação com Python </Card.Title>
     <Card.Text>
-    conceitos básicos de programação, como expressões, variáveis, repetições e muito mais.
+    Conceitos básicos de programação.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>

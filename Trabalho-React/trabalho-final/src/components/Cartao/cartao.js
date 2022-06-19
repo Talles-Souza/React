@@ -11,7 +11,7 @@ export const Cartao = ()=>{
   <Card.Body>
     <Card.Title>Lógica de programação</Card.Title>
     <Card.Text>
-    Neste livro, você encontrará informações básicas sobre lógica de programação. Dividida em 10 capítulos, aborda os principais temas e com exercícios.
+    Neste livro, você encontrará informações básicas sobre lógica de programação.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -22,7 +22,7 @@ export const Cartao = ()=>{
   <Card.Body>
     <Card.Title>Banco de dados: Teoria e Desenvolvimento</Card.Title>
     <Card.Text>
-    Este livro aborda os principais fundamentos de bancos de dados, como tipos de acesso a arquivos, estruturas de dados, métodos de ordenação etc.
+    Este livro aborda os principais fundamentos de bancos de dados.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -33,7 +33,7 @@ export const Cartao = ()=>{
   <Card.Body>
     <Card.Title>Java e Orientação a Objetos: iniciante</Card.Title>
     <Card.Text>
-    Aprenda Orientação a Objetos com Java de forma simple, Você compilará e executará seu próprio programa em algumas horas.
+    Aprenda Orientação a Objetos com Java de forma simples.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -44,7 +44,7 @@ export const Cartao = ()=>{
   <Card.Body>
     <Card.Title>Eclipse 3.1 - Programando Com Visual Editor - 2ª Edição</Card.Title>
     <Card.Text>
-    Este livro tem o propósito de ensinar como começar a produzir aplicações comerciais em Java com a ferramenta Eclipse.
+    Produzir aplicações comerciais em Java.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -55,7 +55,7 @@ export const Cartao = ()=>{
   <Card.Body>
     <Card.Title>HTML e CSS: projete e construa websites</Card.Title>
     <Card.Text>
-     A melhor maneira de aprender HTML e CSS. Se você quer projetar, construir do zero ou ter mais controle sobre um site existente, este livro é ideal pra você.
+     A melhor maneira de aprender HTML e CSS.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
@@ -66,7 +66,7 @@ export const Cartao = ()=>{
   <Card.Body>
     <Card.Title>Javascript: Básico ao Avançado</Card.Title>
     <Card.Text>
-    Livro para iniciantes na área de programação que explica a linguagem desde os comandos mais básicos até os conceitos mais complexos
+    Livro para iniciantes na área de programação.
     </Card.Text>
     <Button variant="danger">Adicionar ao carrinho</Button>
   </Card.Body>
