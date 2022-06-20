@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Topo } from "../../components/headerHome/header";
-import { Carros } from "../../components/Carro/carro";
+import { Cart } from "../../components/Cart/cart";
 import { Container } from "./barraCinza";
-export const Carrinho = () =>{
+import { CartItensContext } from "../../context/CartItem";
+
+export const Carrinho = () => {
+    const { cartItens} = useContext(CartItensContext)
     return (<>
-    <Topo/>
-     <Container/>
-    <Carros/>
+        <Topo />
+        <Container />
+        <Cart cartItens = {cartItens} />
     </>);
 }
