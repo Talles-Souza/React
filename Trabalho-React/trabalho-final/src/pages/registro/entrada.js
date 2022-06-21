@@ -8,9 +8,6 @@ import { Footer } from "../../components/footer/footerPage";
 
 export const Pag1 = () => {
 
-
-
-
   let navigate = useNavigate();
 
   function handleClick() {
@@ -46,8 +43,6 @@ export const Pag1 = () => {
         </Inside>
       </Cards>
       <Footer />
-
-
     </>
   )
 }

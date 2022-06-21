@@ -54,10 +54,6 @@ export const Logar = () => {
     return navigate("/home");
   };
 
-
-
-
-
   return (
     <>
       <Form className="box" onSubmit={handleSubmit}>

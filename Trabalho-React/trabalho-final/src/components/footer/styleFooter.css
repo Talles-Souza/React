@@ -10,14 +10,12 @@
 
 }
 
-
 #footer .footer-top {
     background: #3b3b3b;
     border-top: 1px solid #474747;
     border-bottom: 1px solid #474747;
     padding: 30px 0 20px 0
 }
-
 
 #footer .footer-top .social-links a {
     display: inline-block;

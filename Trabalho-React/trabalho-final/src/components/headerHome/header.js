@@ -8,7 +8,6 @@ export const Topo = () => {
   const { getTotalItensOnCart } = useContext(CartItensContext)
   const navigate = useNavigate();
 
-
   function handleClick() {
     navigate("/login")
   }
@@ -43,10 +42,7 @@ export const Topo = () => {
           </Badge>
         </div>
         <button type="button" class="btn btn-outline-danger" onClick={handleClick}>Sair</button>
-
       </Container>
-
     </Navbar>
-
   </>);
 }

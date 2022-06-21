@@ -4,6 +4,7 @@ import { useState } from "react";
 import { api } from "../../Service/api";
 import dayjs from "dayjs"
 import { useNavigate } from "react-router-dom";
+
 export const Registro = () => {
 
   const [name, setName] = useState("");
@@ -14,7 +15,6 @@ export const Registro = () => {
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
-
 
   let navigate = useNavigate();
 
@@ -36,6 +36,7 @@ export const Registro = () => {
       setName("");
       alert("Cadastro realizado com sucesso, voce ira ser redicrecionado para a tela de login")
       navigate("/login")
+   
     } catch (err) {
       alert(err)
       setShow(true);

@@ -2,12 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartItensContext } from "../../context/CartItem";
 
-
-const ItemCart = (props) => {
+    const ItemCart = (props) => {
     const [quantidade, setQuantidade] = useState(props.item.quantidade);
     const { addItem, removeItem, decreaseItemQuantity } = useContext(CartItensContext);
     const total = props.item.valorUnitarioProduto * quantidade;
-
 
     function handlerQuantityChange(produto, quantidade) {
         if (quantidade > 0) {
@@ -61,13 +59,11 @@ export const Cart = () => {
 
     function Finalizar() {
         alert("Compra finalizada com sucesso !!!! ")
-
     }
 
     return (<>
 
         <div class="container px-3 my-5 clearfix">
-
             <div class="card">
                 <div class="card-header">
                     <h2>Lista de Itens</h2>
@@ -94,14 +90,12 @@ export const Cart = () => {
                         </table>
                     </div>
 
-
                     <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
                         <div class="mt-4">
-
                         </div>
+                        
                         <div class="d-flex">
                             <div class="text-right mt-4 mr-5">
-
                             </div>
                             <div class="text-right mt-4">
                                 <label class="text-muted font-weight-normal m-0">Valor total</label>
@@ -118,12 +112,8 @@ export const Cart = () => {
                         <button type="button" class="btn btn-outline-danger" onClick={handleClick}>Voltar para a loja</button>
                         <a href="/home">  <button type="button" class="btn btn-outline-success" onClick={Finalizar}>Finalizar pedido</button></a>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
-
     </>);
 }

@@ -1,11 +1,8 @@
 import React, { createContext, useState } from 'react';
 
-
 const CartItensContext = createContext();
-
-
 const CartItensProvider = (props) => {
-    const [cartItens, setCartItens] = useState([]);
+const [cartItens, setCartItens] = useState([]);
 
     function getProductById(id) {
         return cartItens.find((p) => p.idProduto === id);
@@ -47,8 +44,8 @@ const CartItensProvider = (props) => {
         } else {
             setCartItens([...cartItens, produto])
         }
-
     }
+    
     function removeItem(produto) {
         const newCartItens = cartItens.filter((p) => p.idProduto !== produto.idProduto);
         setCartItens(newCartItens);

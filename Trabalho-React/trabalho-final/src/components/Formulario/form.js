@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export const Formu = () => {
 
-
     let navigate = useNavigate();
     const initialValues = { username: "", email: "", subject: "", message: "" };
     const [formValues, setFormValues] = useState(initialValues);
@@ -42,7 +41,6 @@ export const Formu = () => {
         }
         if (values.message && values.subject && values.email && values.username) {
             alert("Mensagem enviada com sucesso")
-            //<div className="alert alert-danger">           Mensagem enviada com sucesso!        </div>
             navigate("/home")
         }
         return errors;

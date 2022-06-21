@@ -64,8 +64,6 @@ export const Inicio = () => {
           />
         </nav>
       </Cont1>
-     
     </Body>
-
   </>);
 }

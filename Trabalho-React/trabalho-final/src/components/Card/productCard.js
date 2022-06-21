@@ -4,22 +4,9 @@ import { useContext } from "react";
 import { CartItensContext } from "../../context/CartItem";
 import { Avatar, Badge } from 'antd';
 
-
 export const ProductCard = ({ produto }) => {
 
   const { cartItens, addItem } = useContext(CartItensContext)
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <>
@@ -40,8 +27,5 @@ export const ProductCard = ({ produto }) => {
           </Avatar>
         </div>
       </Card>
-
-
-
     </>);
 }

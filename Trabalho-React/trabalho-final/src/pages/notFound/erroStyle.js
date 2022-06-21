@@ -7,12 +7,10 @@ width: 60%;
 margin: 40px auto 0;
 font-family: FreeMono, monospace;
 `
-
 export const BoxText =styled.div`
 width: 100%;
 height: 100%;
 `
-
 export const Button = styled.div`
 display: flex;
 flex-wrap: wrap;
