@@ -1,16 +1,14 @@
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {useState, useEffect} from "react"
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Logar = () => {
   let navigate = useNavigate();
+  var numero = 1;
 
-  function handleClick() {
-    navigate("/home")
-  }
-  const initialValues = {email: "", cpf: "" };
+  const initialValues = { email: "", cpf: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -37,41 +35,48 @@ export const Logar = () => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const regexcpf = /^\d{3}.\d{3}.\d{3}-\d{2}$/;
+
     if (!values.email) {
       errors.email = "Requer um e-mail";
+      return errors;
     } else if (!regex.test(values.email)) {
       errors.email = "Formato de e-mail ivalido";
+      return errors;
     }
     if (!values.cpf) {
       errors.cpf = "Requer CPF";
+      return errors;
     } else if (!regexcpf.test(values.cpf)) {
-      errors.cpf = "Formato de CPF inválido";
+      errors.cpf = "Formato de CPF invÃ¡lido";
+      return errors;
     }
-    if(!values.cpf === ""){
-      navigate("/home")
-    }
-    return errors;
+
+    return navigate("/home");
   };
+
+
+
+
 
   return (
     <>
       <Form className="box" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Email" name='email' value={formValues.email} onChange={handleChange}/>
+          <Form.Control type="email" placeholder="Email" name='email' value={formValues.email} onChange={handleChange} />
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
-        <p style={{color: "red"}}>{formErrors.email}</p>
+        <p style={{ color: "red" }}>{formErrors.email}</p>
         <Form.Group className="mb-3" controlId="formBasicSsn">
           <Form.Label>CPF</Form.Label>
-          <Form.Control type="ssn" placeholder="CPF" name='cpf' value={formValues.cpf} onChange={handleChange}/>
+          <Form.Control type="ssn" placeholder="CPF" name='cpf' value={formValues.cpf} onChange={handleChange} />
         </Form.Group>
-        <p style={{color: "red"}}>{formErrors.cpf}</p>
+        <p style={{ color: "red" }}>{formErrors.cpf}</p>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Lembrar" />
         </Form.Group>
-        <Button variant="dark" type="submit">
+        <Button variant="dark" type="submit" onClick={validate}>
           Logar
         </Button>
       </Form>
