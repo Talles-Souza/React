@@ -1,49 +1,66 @@
 import React, { createContext, useState } from 'react';
 
 
-const CartItensContext = createContext(null);
-const CartContext = createContext(null);
+const CartItensContext = createContext();
+
 
 const CartItensProvider = (props) => {
     const [cartItens, setCartItens] = useState([]);
 
+    function getProductById(id) {
+        return cartItens.find((p) => p.idProduto === id);
+    };
+
+    function getTotalItensOnCart() {
+        return cartItens.reduce(function (acc, obj) {
+            return acc + obj.quantidade;
+        }, 0);
+    }
+
+    function decreaseItemQuantity(produto) {
+        const existingProduct = getProductById(produto.idProduto);
+        let newState = [];
+        if (existingProduct) {
+            newState = cartItens.map((p) => {
+                if (p.idProduto === existingProduct.idProduto) {
+                    p.quantidade -= 1;
+                    return { ...p };
+                }
+                return { ...p };
+            });
+            setCartItens(newState);
+        }
+    }
 
     function addItem(produto) {
-        console.log(produto, cartItens);
-        setCartItens([...cartItens, produto])
+        const existingProduct = getProductById(produto.idProduto);
+        let newState = [];
+        if (existingProduct) {
+            newState = cartItens.map((p) => {
+                if (p.idProduto === existingProduct.idProduto) {
+                    p.quantidade += 1;
+                    return { ...p };
+                }
+                return { ...p };
+            });
+            setCartItens(newState);
+        } else {
+            setCartItens([...cartItens, produto])
+        }
+
+    }
+    function removeItem(produto) {
+        const newCartItens = cartItens.filter((p) => p.idProduto !== produto.idProduto);
+        setCartItens(newCartItens);
     }
 
     return (
         <CartItensContext.Provider
-            value={{ cartItens }}
+            value={{ cartItens, addItem, removeItem, getTotalItensOnCart, decreaseItemQuantity }}
         >
-            <CartContext.Provider value={{ addItem }}>
-                {props.children}
-            </CartContext.Provider>
+            {props.children}
         </CartItensContext.Provider>
     );
 };
 
-export { CartItensContext, CartItensProvider, CartContext };
-
-
-//export const DataContext = createContext(null)
-
-
-
-// export function Contexto (props) {
-
-//     const [nome, setNome] = useState(estadoContexto.nome)
-
-//     function handleSetNome(e){
-//         setNome(e.target.value)
-//         console.log("Entrou");
-//     }
-
-//     return(
-//         <DataContext.Provider value={{nome, handleSetNome}}>
-//             {props.children}
-//         </DataContext.Provider>
-//     )
-
-//}
+export { CartItensContext, CartItensProvider };

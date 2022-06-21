@@ -1,13 +1,14 @@
-import styled from "styled-components"; 
+import styled from "styled-components";
 
-export const Container =styled.div`
+export const Container = styled.div`
 height: 3rem;
 background-color:dimgray;
 margin-bottom: 2rem;
 `
-export const Body =styled.div`
+export const Body = styled.div`
 display :flex;
 flex-wrap: wrap;
+justify-content: space-around;
 height: 200vh;
 margin-top: 10rem;
 width: 100%;
@@ -28,6 +29,7 @@ width: 100%;
 margin: auto;
 align-items: center;
 justify-content: center;
+
 `
 export const Cont12 = styled.div`
 display :flex;

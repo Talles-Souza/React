@@ -5,45 +5,41 @@ import { Paginacao } from "../../components/paginacao/paginacao";
 import { ProductCard } from "../../components/Card/productCard";
 import { Container, Body, Cont1, Cont11, Cont12, Texto } from "./estiloHome";
 import { api } from "../../Service/api";
+import { Footer } from "../../components/footer/footerPage";
 
 export const Inicio = () => {
-
-
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [dataSourcePaginated, setDatasourcePaginated] = useState([]);
+
+  const [listaPaginada, setListaPaginada] = useState([]);
   const [produtos, setProdutos] = useState([])
-  const mountDataSource = (data, pageNumber) => {
-    const batchSlice = data?.slice(
+
+  const montaListaPaginada = (data, pageNumber) => {
+    const listaCortada = data?.slice(
       pageNumber === 1 ? 0 : 6 * pageNumber - 6,
       6 * pageNumber,
     );
 
-    const copyOfData = batchSlice?.map((i) => i);
-
-    setDatasourcePaginated(copyOfData);
+    const copiaDaLista = listaCortada?.map((i) => i);
+    setListaPaginada(copiaDaLista);
   };
-  const paginate = (number) => {
+  const paginar = (number) => {
     setPage(number);
-    mountDataSource(produtos, number);
+    montaListaPaginada(produtos, number);
   };
+
+  const getProdutos = async () => {
+    const response = await api.get(`e-commerce/produto`)
+    setTotalPages(response.data?.length || 0);
+    setPage(1);
+
+    montaListaPaginada(response.data, 1);
+    setProdutos(response.data)
+  }
 
   useEffect(() => {
-    const getProdutos = async () => {
-      const response = await api.get(`e-commerce/produto`)
-      setTotalPages(response.data?.length || 0);
-      setPage(1);
-
-      mountDataSource(response.data, 1);
-      setProdutos(response.data)
-    }
     getProdutos();
   }, [])
-
-
-
-
-
 
   return (<>
     <Topo />
@@ -53,11 +49,9 @@ export const Inicio = () => {
         <Cont11><h2><Texto>Comece sua jornada na tecnologia</Texto></h2></Cont11>
         <Cont12>
 
-          {dataSourcePaginated.map(produto => {
+          {listaPaginada.map(produto => {
             return (<ProductCard produto={produto} />)
           })}
-
-
         </Cont12>
         <nav aria-label="Navegação de página exemplo">
           <Paginacao
@@ -65,12 +59,13 @@ export const Inicio = () => {
             total={totalPages}
             defaultCurrent={page}
             current={page}
-            onChange={paginate}
+            onChange={paginar}
             showSizeChanger={false}
           />
         </nav>
       </Cont1>
-
+      <Footer />
     </Body>
+
   </>);
 }
