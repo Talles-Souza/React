@@ -39,7 +39,7 @@ export const Topo = () => {
         </Navbar.Collapse>
         <div style={{ marginRight: '12px', cursor: 'pointer'}}>
           <Badge count={getTotalItensOnCart()} >
-            <Avatar shape="square" size="large" onClick={handleClick1} ><i class="bi bi-cart"></i></Avatar>
+            <Avatar shape="square" size="large" onClick={handleClick1} style={{color:'black'}}><i class="bi bi-cart"></i></Avatar>
           </Badge>
         </div>
         <button type="button" class="btn btn-outline-danger" onClick={handleClick}>Sair</button>

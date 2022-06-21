@@ -23,7 +23,7 @@ export const ProductCard = ({ produto }) => {
 
   return (
     <>
-      <Card className="card1" style={{ width: '18rem', height: '40%', marginBottom: '20px', display: 'flex', justifyContent: 'space-between', flexDirection: 'column', transform: Card, transition: 'transform 0.25s linear' }}>
+      <Card className="card1" style={{ width: '18rem', height: '40%', marginBottom: '15px', display: 'flex', justifyContent: 'space-between', flexDirection: 'column', transform: Card, transition: 'transform 0.25s linear' }}>
         <Card.Img style={{ width: '100%', height: '47%' }} variant="top" src={produto.nomeImagemProduto} />
         <Card.Body>
           <Card.Title>{produto.nomeProduto}</Card.Title>
