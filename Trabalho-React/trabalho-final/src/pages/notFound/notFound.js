@@ -13,7 +13,7 @@ export const NotFound = () => {
 
     return (
         <>
-            <Header />
+
             <Container>
                 <BoxText>
                     <h1> A página que você está procurando não foi encontrada.</h1>

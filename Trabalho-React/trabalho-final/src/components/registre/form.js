@@ -34,7 +34,7 @@ export const Registro = () => {
       setSuccess(true);
       setCpf("");
       setName("");
-      alert("Cadastro realizado com sucesso, voce ira ser redicrecionado para a tela de login")
+      alert("Cadastro realizado com sucesso, voce ira ser redirecionado para a tela de login")
       navigate("/login")
     } catch (err) {
       alert(err)
