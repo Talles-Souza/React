@@ -1,11 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext, CartItensContext } from "../../context/CartItem";
+import { CartItensContext } from "../../context/CartItem";
 
 
 const ItemCart = (props) => {
-    const [quantidade, setQuantidade] = useState(1);
+    const [quantidade, setQuantidade] = useState(props.item.quantidade);
+    const { addItem, removeItem, decreaseItemQuantity } = useContext(CartItensContext);
     const total = props.item.valorUnitarioProduto * quantidade;
+
+
+    function handlerQuantityChange(produto, quantidade) {
+        if (quantidade > 0) {
+            setQuantidade(quantidade)
+            if (produto.quantidade < quantidade) {
+                addItem({ ...produto, quantidade: quantidade - 1 })
+            }
+            else {
+                decreaseItemQuantity({ ...produto })
+            }
+        }
+    }
+
     return (
 
         <tr>
@@ -21,42 +36,28 @@ const ItemCart = (props) => {
                 style: 'currency',
                 currency: 'BRL',
             }).format(props.item.valorUnitarioProduto)}</td>
-            <td class="align-middle p-4"><input type="number" class="form-control text-center" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} /></td>
+            <td class="align-middle p-4"><input type="number" class="form-control text-center" value={quantidade} onChange={(e) => handlerQuantityChange(props.item, e.target.value)} /></td>
             <td class="text-right font-weight-semibold align-middle p-4">{new Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
             }).format(total)}</td>
-            <td class="text-center align-middle px-0"><a href="/" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+            <td class="text-center align-middle px-0"><a onClick={() => removeItem(props.item)} class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
         </tr>
     );
 }
 
-export const Cart = (props) => {
-
-    let navigate = useNavigate();
+export const Cart = () => {
+    const navigate = useNavigate();
+    const { cartItens } = useContext(CartItensContext);
 
     function handleClick() {
         navigate("/home")
     }
-
-    const { cartItens, addItem } = useContext(CartContext)
-    useEffect(() => {
-        addItem({
-            "idProduto": 18,
-            "nomeProduto": "Introdução à Programação com Python",
-            "descricao": "Conceitos básicos de programação.",
-            "qtdEstoqueProduto": 15,
-            "dataCadastroProduto": "03/06/2022",
-            "valorUnitarioProduto": 57.0,
-            "nomeImagemProduto": "https://images-na.ssl-images-amazon.com/images/I/41qeEtBu02L._SX357_BO1,204,203,200_.jpg",
-            "categoriaDTO": {
-                "idCategoria": 4,
-                "nomeCategoria": "FrontEnd",
-                "descricaoCategoria": "Fundamentos sobre       FrontEnd"
-            }
-        })
-        console.log(cartItens);
-    }, [])
+    function SomaTotal() {
+        return cartItens.reduce(function (acc, obj) {
+            return acc + obj.valorUnitarioProduto * obj.quantidade;
+        }, 0);
+    }
 
     return (<>
 
@@ -80,8 +81,8 @@ export const Cart = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {props.cartItens.length > 0 ? (<>
-                                    {props.cartItens.map(item => {
+                                {cartItens.length > 0 ? (<>
+                                    {cartItens.map(item => {
                                         return (<ItemCart item={item} />);
                                     })}</>) :
                                     (<tr> <td><div>Carrinho vazio</div></td></tr>)}
@@ -99,8 +100,12 @@ export const Cart = (props) => {
 
                             </div>
                             <div class="text-right mt-4">
-                                <label class="text-muted font-weight-normal m-0">Total price</label>
-                                <div class="text-large"><strong>$1164.65</strong></div>
+                                <label class="text-muted font-weight-normal m-0">Valor total</label>
+                                <div class="text-large"><strong>{new Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL',
+                                }).format(SomaTotal())}
+                                </strong></div>
                             </div>
                         </div>
                     </div>
