@@ -77,7 +77,6 @@ export const Cart = () => {
                         <table class="table table-bordered m-0">
                             <thead>
                                 <tr>
-
                                     <th class="text-center py-3 px-4" style={{ minWidth: '400px' }}>Nome do Produto &amp; Detalhes</th>
                                     <th class="text-right py-3 px-4" style={{ width: '100px' }}>Preço</th>
                                     <th class="text-center py-3 px-4" style={{ width: '120px' }}>Quantidade</th>
