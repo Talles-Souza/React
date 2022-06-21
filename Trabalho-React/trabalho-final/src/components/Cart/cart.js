@@ -59,6 +59,11 @@ export const Cart = () => {
         }, 0);
     }
 
+    function Finalizar() {
+        alert("Compra finalizada com sucesso !!!! ")
+
+    }
+
     return (<>
 
         <div class="container px-3 my-5 clearfix">
@@ -112,7 +117,7 @@ export const Cart = () => {
 
                     <div class="float-right bt2">
                         <button type="button" class="btn btn-outline-danger" onClick={handleClick}>Voltar para a loja</button>
-                        <button type="button" class="btn btn-outline-success">Finalizar pedido</button>
+                        <a href="/home">  <button type="button" class="btn btn-outline-success" onClick={Finalizar}>Finalizar pedido</button></a>
                     </div>
 
 

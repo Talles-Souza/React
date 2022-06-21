@@ -67,3 +67,13 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
   vertical-align: middle;
 }
+
+.card1 {
+  transition: 0.25s linear;
+
+}
+
+.card1:hover {
+  transform: translate(0px, -2px);
+  transform: scale(1.1);
+}

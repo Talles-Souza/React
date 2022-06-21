@@ -64,7 +64,7 @@ export const Inicio = () => {
           />
         </nav>
       </Cont1>
-      <Footer />
+     
     </Body>
 
   </>);
