@@ -4,11 +4,11 @@ import { Header } from "../../components/headerHome/headerPage";
 import { Card2, Cards, Card1, Card3, Wrapper, Inside, Container, Text1, Text2, Button } from "./style.js";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../Service/api";
-
+import { Footer } from "../../components/footer/footerPage";
 
 export const Pag1 = () => {
 
-  
+
 
 
   let navigate = useNavigate();
@@ -45,6 +45,8 @@ export const Pag1 = () => {
           </Card3>
         </Inside>
       </Cards>
+      <Footer />
+
 
     </>
   )
